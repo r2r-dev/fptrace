@@ -368,7 +368,7 @@ func sysexit(pid int, pstate *ProcState, sys *SysState) bool {
 			break // Treat reads after writes as writes only.
 		}
 		if !strings.HasPrefix(path, "/dev/fptrace/pipe/") {
-			fi, err := os.Stat(path)
+			fi, err := os.Lstat(path)
 			e.Exit(err)
 			if fi.IsDir() {
 				break // Do not record directories.

@@ -1,4 +1,4 @@
-with import <nixpkgs> { };
+{ buildGoPackage }:
 
 buildGoPackage rec {
   name = "fptrace";
